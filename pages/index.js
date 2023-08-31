@@ -1,10 +1,10 @@
 import React from 'react'
 import { Herobanner } from '../components/navigation/HeroBanner';
 import { FooterBanner } from '../components/navigation/FooterBanner';
+import {Product} from '../components/product/Product'
 import {client} from '../lib/client'
 
 const Home = ({products, bannerData}) => {
-  console.log(products)
   return (
     <div>
       <Herobanner heroBanner={bannerData.length && bannerData[0]}/>
@@ -14,7 +14,7 @@ const Home = ({products, bannerData}) => {
       </div>
 
       <div className='products-container'>
-          {products?.map((product) => product.name)}
+          {products?.map((product) => <Product key={product._id} product={product}/>)}
       </div>
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </div>

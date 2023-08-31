@@ -14,12 +14,12 @@ export function Herobanner({ heroBanner }) {
         <img src={imageUrl} alt="headphones" className='hero-banner-image' />
 
         <div>
-          <Link href='/product/ID'>
-            <button type='button'> Button Text</button>
+          <Link href={`/product/${heroBanner.product}`}>
+            <button type='button'> {heroBanner.buttonText}</button>
           </Link>
           <div className='desc'>
             <h5>Description</h5>
-            <p>Description</p>
+            <p>{heroBanner.desc}</p>
           </div>
         </div>
       </div>
