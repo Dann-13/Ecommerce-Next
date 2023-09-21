@@ -1,9 +1,10 @@
 
+/**Este es el footer banner, aen esta seccion se muestra el producto que tiene descuento 
+asi como sus dias restantes  */
 import React from 'react';
 import Link from 'next/link';
 import { urlFor } from '../../lib/client';
 export function FooterBanner({footerBanner: { discount, largeText1, largeText2, saleTime, smallText, midText, desc, product, buttonText, image }}) {
-  console.log(image[0])
   return (
     <div className='footer-banner-container'>
       <div className='banner-desc'>
