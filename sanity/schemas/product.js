@@ -35,6 +35,18 @@ export default {
             name: 'details',
             title: 'Details',
             type: 'string',
+        },
+        {
+            name: 'category',
+            title: 'Category',
+            type: 'string', // Puedes usar 'string' para la categoría por simplicidad, o crear un esquema separado para las categorías
+            options: {
+                list: [ // Aquí podrías definir una lista de categorías predefinidas si lo deseas
+                    { title: 'Maquillaje', value: 'maquillaje' },
+                    { title: 'Ropa', value: 'ropa' },
+                    // ...
+                ]
+            }
         }
     ]
 }

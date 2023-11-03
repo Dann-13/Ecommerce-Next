@@ -65,7 +65,7 @@ function ProductDetails({ product, products }) {
             <button 
               type="button" 
               className="buy-now" 
-              onClick=''>
+              >
                 Comprar
             </button>
           </div>
