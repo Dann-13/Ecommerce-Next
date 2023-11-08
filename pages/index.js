@@ -1,25 +1,39 @@
 import React from 'react'
-import { Herobanner } from '../components/navigation/HeroBanner';
+import { HeroBanner2 } from '../components/navigation/HeroBanner2';
+//import { HeroBanner } from '../components/navigation/HeroBanner';
 import { FooterBanner } from '../components/navigation/FooterBanner';
 import { Product } from '../components/product/Product'
+import {Carousel} from '../components/navigation/Carousel'
 import { client } from '../lib/client'
 
 const Home = ({ products, bannerData }) => {
   return (
     <div>
       {/* Componente Herobanner con el primer elemento de bannerData como heroBanner */}
-      <Herobanner heroBanner={bannerData.length && bannerData[0]} />
-      <div className='products-heading'>
-        <h2>Los mejores productos</h2>
-        <p>para vivir la musica</p>
+      {/* <HeroBanner2 heroBanner={bannerData.length && bannerData[0]} /> */}
+      {/*Aqui el carrusel */}
+      <Carousel />
+      <div className='flex justify-center items-center flex-col md:flex-row'>
+        <img
+          className='w-44 md:w-56'
+          src='/separador.svg'
+
+        />
+        <h2 className='font-sans p-4 text-2xl'>Nuestros Productos</h2>
+        <img
+          className='w-44 md:w-56'
+          src='/separador.svg'
+        />
       </div>
 
-      <div className='products-container'>
-        {/* Mapea la lista de productos y renderiza cada uno usando el componente Product */}
+
+
+      {/* <div className='products-container'>
+        
         {products?.map((product) => <Product key={product._id} product={product} />)}
       </div>
-      {/* Componente FooterBanner con el primer elemento de bannerData como footerBanner */}
-      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+  
+      <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
     </div>
   )
 }

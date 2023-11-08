@@ -9,7 +9,16 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'sans': ['Quicksand', 'sans-serif'],
+      'Lobster': ['Lobster Two', 'sans-serif']
+    },
+    extend: {
+      colors: {
+        'custom-pink': '#FCB4B4',
+        'custom-pink2': '#FCC0B3'
+      },
+    },
   },
   plugins: [],
 }

@@ -28,7 +28,7 @@ width: 100%;
 
 }
 .layout{
-  padding: 10px;
+  padding: auto;
 }
 
 .navbar-container{
@@ -64,6 +64,9 @@ width: 100%;
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+.header{
+  box-shadow: 0px 5px 5px -4px rgba(252, 180, 180, 1);
+}
 
  span.text-red {
     -webkit-text-stroke: 1px #f02d34;
@@ -90,8 +93,8 @@ width: 100%;
   position: absolute;
   right: -8px;
   font-size: 12px;
-  color: #eee;
-  background-color: #f02d34;
+  color: #464646;
+  background-color: #FCB4B4;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -326,7 +329,7 @@ text-align: end;
 }
 .cart-num-items{
   margin-left: 10px;
-  color: #f02d34;
+  color: #FCB4B4;
 }
 .empty-cart{
   margin:40px;
@@ -626,6 +629,7 @@ margin-top: 160px;
 @media screen and (max-width:800px) {
   .hero-banner-container{
     height: 560px;
+    width: 100% !important;
   }
   .hero-banner-image{
     width: 77%;
@@ -765,4 +769,15 @@ margin-top: 160px;
   width: 300px;
   margin: auto;
 }
+}
+
+/* Estilos opcionales para ajustar la posición del formulario */
+.md-hidden {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin-top: 10px; /* Ajusta el margen entre el botón y el formulario */
 }

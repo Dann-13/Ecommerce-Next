@@ -1,25 +1,20 @@
 /**EL primer componente, en este esta el logo y el carrito de compras */
 import React from 'react'
-import Link from 'next/link'
-import { AiOutlineShopping } from 'react-icons/ai'
-import { useStateContext } from '../../context/StateContext';
-import Cart from '../product/Cart';
 const NavBar = () => {
-  const { showCart, setShowCart, totalQuantities } = useStateContext();
 
   return (
-    <div className='navbar-container'>
-      <p className='logo'>
-        <Link href="/" > Aqui es el logo </Link>
-      </p>
-      <button type='button'
-      className='cart-icon' onClick={()=>{
-        setShowCart(true)
-      }}>
-        <AiOutlineShopping />
-        <span className='cart-item-qty'> {totalQuantities} </span>
-      </button>
-      {showCart && <Cart />}
+    <div className='mt-[11.5rem] lg:mt-[4.5rem] bg-custom-pink'>
+      <div className='flex justify-center'>
+        <ul className='flex text-center p-3'>
+          <li className='mr-6'>
+            <button class="text-base leading-7 text-gray-800 bg-transparent rounded-md px-3 py-1 hover:text-pink-600 focus:outline-none focus:ring focus:border-gray-600 font-sans">Maquillaje</button>
+          </li>
+          <li className=''>
+            <button class="text-base leading-7 text-gray-800 bg-transparent rounded-md px-3 py-1 hover:text-pink-600 focus:outline-none focus:ring focus:border-gray-600 font-sans">Para toda ocasión</button>
+          </li>
+        </ul>
+      </div>
+
     </div>
   )
 }
