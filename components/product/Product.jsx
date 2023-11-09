@@ -4,7 +4,7 @@ import { urlFor } from '../../lib/client'
 // Componente Product que representa la tarjeta de un producto
 export function Product({ product: { image, name, slug, price } }) {
   return (
-    <div>
+    <div className='flex flex-col items-center'>
       {/* Enlace a la página de detalles del producto utilizando el slug */}
       <Link href={`/product/${slug.current}`} >
         <div className='product-card'>

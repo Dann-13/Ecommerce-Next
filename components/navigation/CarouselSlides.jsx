@@ -33,7 +33,9 @@ export function CarouselSlides({ imagesUrl }) {
         <Slider ref={slider} {...settings}>
           {imagesUrl.map((imageUrl, index) => (
             <div className="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96" key={index}>
-              <img src={imageUrl} alt={`Imagen ${index + 1}`} className="block absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2" />
+              <img src={imageUrl} 
+              alt={`Imagen ${index + 1}`} 
+              className="block absolute top-1/2 left-1/2 w-full h-full object-cover -translate-x-1/2 -translate-y-1/2" />
             </div>
           ))}
         </Slider>

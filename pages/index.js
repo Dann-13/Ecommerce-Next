@@ -1,37 +1,24 @@
 import React from 'react'
 import { FooterBanner } from '../components/navigation/FooterBanner';
 import { Product } from '../components/product/Product'
-import {CarouselSlides} from '../components/navigation/CarouselSlides'
+import { CarouselSlides } from '../components/navigation/CarouselSlides'
+import {ProductHeader} from '../components/sections/ProductHeader'
 import { client } from '../lib/client'
 
 const Home = ({ products, imagesArray }) => {
   return (
     <div>
-      {/* Componente Herobanner con el primer elemento de bannerData como heroBanner */}
-      {/* <HeroBanner2 heroBanner={bannerData.length && bannerData[0]} /> */}
       {/*Aqui el carrusel */}
       <CarouselSlides imagesUrl={imagesArray} />
-      <div className='flex justify-center items-center flex-col md:flex-row'>
-        <img
-          className='w-44 md:w-56'
-          src='/separador.svg'
-
-        />
-        <h2 className='font-sans p-4 text-2xl'>Nuestros Productos</h2>
-        <img
-          className='w-44 md:w-56'
-          src='/separador.svg'
-        />
+      <ProductHeader title="Nuestros Productos" />
+      <div className='flex justify-center'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 w-[80%]'>
+          {products?.map((product) => <Product key={product._id} product={product} />)}
+        </div>
       </div>
 
 
-
-      {/* <div className='products-container'>
-        
-        {products?.map((product) => <Product key={product._id} product={product} />)}
-      </div>
-  
-      <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
+      {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
     </div>
   )
 }
@@ -54,7 +41,7 @@ export const getServerSideProps = async () => {
 
   // Devuelve un objeto con las propiedades products y bannerData, que se pasarán al componente Home
   return {
-    props: { products , imagesArray }
+    props: { products, imagesArray }
   };
 };
 

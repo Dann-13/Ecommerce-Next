@@ -6,7 +6,7 @@ import { useStateContext } from '../../context/StateContext';
 
 function ProductDetails({ product, products }) {
   // Extracción de datos del producto pasado como propiedad
-  console.log("holassssssssss" + product)
+  console.log("Hola" + product)
   const { image, name, details, price } = product;
   
   const [index, setIndex] = useState(0);
