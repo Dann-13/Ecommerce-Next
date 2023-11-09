@@ -19,10 +19,10 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className='mb-5 lg:mb-0'>
-                    <form class="m-0 relative mx-auto text-gray-600">
-                        <input class="border-2 outline-none border-custom-pink hover:border-pink-500 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                    <form className="m-0 relative mx-auto text-gray-600">
+                        <input className="border-2 outline-none border-custom-pink hover:border-pink-500 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
                             type="search" name="search" placeholder="Buscar" />
-                        <button type="submit" class="absolute right-0 top-[-12px] mt-5 mr-4">
+                        <button type="submit" className="absolute right-0 top-[-12px] mt-5 mr-4">
                             <BsSearchHeart className='text-pink-200 hover:text-pink-600' size={25} />
                         </button>
                     </form>

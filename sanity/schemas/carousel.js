@@ -4,18 +4,18 @@ export default {
     type: 'document',
     fields: [
       {
+        name: 'title',
+        title: 'Title',
+        type: 'string',
+        description: 'Titulo para el carrusel (opcional)',
+      },
+      {
         name: 'images',
         title: 'Images',
         type: 'array',
-        of: [
-          {
-            type: 'image',
-            options: {
-              hotspot: true, // Activa el hotspot para ajustar el recorte de la imagen
-            },
-          },
-        ],
-        validation: Rule => Rule.max(5).error('Maximum of 5 images allowed'), // Limita a un máximo de 5 imágenes
+        of: [{ type: 'image', options: { hotspot: true } }],
+        validation: Rule => Rule.required().min(2).max(5),
+        description: 'Selecciona de 2 a maximo 5 imagenes para tu carrusel',
       },
     ],
   };

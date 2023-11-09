@@ -1,18 +1,16 @@
 import React from 'react'
-import { HeroBanner2 } from '../components/navigation/HeroBanner2';
-//import { HeroBanner } from '../components/navigation/HeroBanner';
 import { FooterBanner } from '../components/navigation/FooterBanner';
 import { Product } from '../components/product/Product'
-import {Carousel} from '../components/navigation/Carousel'
+import {CarouselSlides} from '../components/navigation/CarouselSlides'
 import { client } from '../lib/client'
 
-const Home = ({ products, bannerData }) => {
+const Home = ({ products, imagesArray }) => {
   return (
     <div>
       {/* Componente Herobanner con el primer elemento de bannerData como heroBanner */}
       {/* <HeroBanner2 heroBanner={bannerData.length && bannerData[0]} /> */}
       {/*Aqui el carrusel */}
-      <Carousel />
+      <CarouselSlides imagesUrl={imagesArray} />
       <div className='flex justify-center items-center flex-col md:flex-row'>
         <img
           className='w-44 md:w-56'
@@ -43,14 +41,20 @@ export const getServerSideProps = async () => {
   // Consulta para obtener todos los documentos de tipo "product" desde Sanity.io
   const query = '*[_type == "product"]';
   const products = await client.fetch(query);
-
-  // Consulta para obtener todos los documentos de tipo "banner" desde Sanity.io
-  const bannerQuery = '*[_type == "banner"]';
-  const bannerData = await client.fetch(bannerQuery);
+  //Consulta para obtener las url de todas las imagenes de documento Carousel
+  const corouselQuery = '*[_type == "carousel"] {images[]{asset->{url}}}';
+  const corouselData = await client.fetch(corouselQuery);
+  // Procesamiento para crear un array solo con las URLs de las imágenes
+  const imagesArray = corouselData.reduce((acc, cur) => {
+    cur.images.forEach(image => {
+      acc.push(image.asset.url);
+    });
+    return acc;
+  }, []);
 
   // Devuelve un objeto con las propiedades products y bannerData, que se pasarán al componente Home
   return {
-    props: { products, bannerData }
+    props: { products , imagesArray }
   };
 };
 

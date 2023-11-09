@@ -5,7 +5,7 @@ import Header from './Header'
 import NavBar from './NavBar'
 const Layout = ({children}) => {
   return (
-    <div className=''>
+    <div>
       <Head>
         <title>Meraki Detalles</title> 
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet"></link>
