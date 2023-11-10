@@ -11,11 +11,13 @@ const Home = ({ products, imagesArray }) => {
       {/*Aqui el carrusel */}
       <CarouselSlides imagesUrl={imagesArray} />
       <ProductHeader title="Nuestros Productos" />
-      <div className='flex justify-center'>
+      <div className='flex justify-center py-5'>
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 w-[80%]'>
           {products?.map((product) => <Product key={product._id} product={product} />)}
         </div>
       </div>
+      <ProductHeader title={"Maquillaje"} />
+      
 
 
       {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}

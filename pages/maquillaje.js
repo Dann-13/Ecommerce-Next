@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { client } from '../lib/client';
 
 function MaquillajePage({ products }) {
-    console.log(products)
     return (
         <div>
             <h1>Productos de Maquillaje</h1>

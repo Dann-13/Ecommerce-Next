@@ -152,7 +152,7 @@ width: 100%;
 .hero-banner-container button{
    border-radius: 15px;
   padding: 10px 16px;
-  background-color: #f02d34;
+  background-color: #FCB4B4;
   color: white;
   border: none;
   margin-top: 40px;
@@ -220,7 +220,7 @@ text-align: end;
 }
 .footer-banner-container{
   padding: 100px 40px;
-  background-color: #f02d34;
+  background-color: #FCB4B4;
   border-radius: 15px;
   position: relative;
   height: 400px;
@@ -441,7 +441,7 @@ padding: 30px 65px;
   transition: .3s ease-in-out;
 }
 .product-detail-image:hover{
-  background-color: #f02d34;
+  background-color: #FCB4B4;
 
 }
 .small-images-container{
@@ -458,10 +458,10 @@ padding: 30px 65px;
 }
 
 .selected-image{
-  background-color:#f02d34;
+  background-color:#FCB4B4;
 }
 .reviews{
-  color: #f02d34;
+  color: #FCB4B4;
   margin-top: 10px;
   display: flex;
   gap: 5px;
@@ -518,8 +518,8 @@ padding: 30px 65px;
   width: 200px;
 
   padding: 10px 20px;
-  background-color: #f02d34;
-  color: white;
+  background-color: #FCB4B4;
+  color: #000;
   border: none;
   margin-top: 40px;
   font-size: 18px;
