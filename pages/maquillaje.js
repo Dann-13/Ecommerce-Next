@@ -1,17 +1,22 @@
 import Link from 'next/link';
 import { client } from '../lib/client';
-
+import { Product } from '../components/product/Product';
+import { ProductHeader } from '../components/sections/ProductHeader'
 function MaquillajePage({ products }) {
     return (
         <div>
-            <h1>Productos de Maquillaje</h1>
+            <ProductHeader title='Encuentra Todo Tipo de Maquillaje' />
             <ul>
-                {products.map(product => (
-                    <Link href={`/product/${product.slug.current}`}>
-                        <li key={product._id}>{product.name}</li>
-                    </Link>
 
-                ))}
+
+                <div className='flex justify-center py-5'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 w-[80%]'>
+                        {products?.map((product) =>
+                            <Link href={`/product/${product.slug.current}`}>
+                                <Product key={product._id} product={product} />
+                            </Link>)}
+                    </div>
+                </div>
             </ul>
         </div>
     );
