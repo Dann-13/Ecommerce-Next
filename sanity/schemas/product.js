@@ -43,7 +43,7 @@ export default {
             options: {
                 list: [ // Aquí podrías definir una lista de categorías predefinidas si lo deseas
                     { title: 'Maquillaje', value: 'maquillaje' },
-                    { title: 'Ropa', value: 'ropa' },
+                    { title: 'Detalles', value: 'detalles' },
                     // ...
                 ]
             }

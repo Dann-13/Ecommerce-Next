@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="bg-custom-pinkFooter lg:grid lg:grid-cols-5">
       <div className="flex justify-center items-center pt-10 md:pt-0 md:px-5">
         <img
-          src="/logo.png"
+          src="/logo_transparente.png"
           alt=""
           className="inset-0 w-[250px] md:w-[325px] object-cover"
         />
