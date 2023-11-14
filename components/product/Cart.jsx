@@ -79,7 +79,7 @@ const Cart = () => {
             </div>
             <div className="btn-container">
               <button type="button" className="btn" onClick=''>
-                Pay with PSE
+                Cotizar
               </button>
             </div>
           </div>

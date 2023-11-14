@@ -18,6 +18,7 @@ module.exports = {
         'custom-pink': '#FCB4B4',
         'custom-pink2': '#FCC0B3',
         'custom-pinkFooter' : '#FDC3C3',
+        'custom-pinkFuerte': '#EE426C'
       },
     },
   },

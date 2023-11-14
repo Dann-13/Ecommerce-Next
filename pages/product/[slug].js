@@ -34,18 +34,8 @@ function ProductDetails({ product, products }) {
           </div>
         </div>
         <div className="product-detail-desc">
-          <h1>{name}</h1>
-          <div className="reviews">
-            <div>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiOutlineStar />
-            </div>
-            <p>(20)</p>
-          </div>
-          <h4>Details: </h4>
+          <h1 className='text-3xl'>{name}</h1>
+          <h4>Detalles: </h4>
           <p>{details}</p>
           <p className="price">${price}</p>
           <div className="quantity">

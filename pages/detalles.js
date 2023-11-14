@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { client } from '../lib/client';
 import { Product } from '../components/product/Product';
 import { ProductHeader } from '../components/sections/ProductHeader'
-function MaquillajePage({ products }) {
+function DetallesPaje({ products }) {
     return (
         <div className='flex flex-col justify-center'>
-            <ProductHeader title='Encuentra Todo Tipo de Maquillaje' />
+            <ProductHeader title='Encuentra Todo Tipo de Detalles' />
             <ul>
 
 
@@ -23,7 +23,7 @@ function MaquillajePage({ products }) {
 }
 
 export const getStaticProps = async () => {
-    const productsQuery = '*[_type == "product" && category == "maquillaje"]'; // Filtrar por la categoría "maquillaje"
+    const productsQuery = '*[_type == "product" && category == "detalles"]'; // Filtrar por la categoría "maquillaje"
 
     const products = await client.fetch(productsQuery);
 
@@ -32,4 +32,4 @@ export const getStaticProps = async () => {
     };
 };
 
-export default MaquillajePage;
+export default DetallesPaje;

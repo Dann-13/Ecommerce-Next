@@ -13,9 +13,13 @@ const NavBar = () => {
             </Link>
 
           </li>
-          <li className=''>
-            <button className="text-base leading-7 text-gray-800 bg-transparent rounded-md px-3 py-1 hover:text-pink-600 focus:outline-none focus:ring focus:border-gray-600 font-sans">Detalles</button>
+          <li>
+            <Link href={"/detalles"} >
+              <button className="text-base leading-7 text-gray-800 bg-transparent rounded-md px-3 py-1 hover:text-pink-600 focus:outline-none focus:ring 
+            focus:border-gray-600 font-sans">Detalles</button>
+            </Link>
           </li>
+
         </ul>
       </div>
 
