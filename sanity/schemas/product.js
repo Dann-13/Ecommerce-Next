@@ -2,12 +2,12 @@ export default {
     name: 'product',
     title: 'Product',
     type: 'document',
-    fields:[
+    fields: [
         {
-            name : 'image',
+            name: 'image',
             title: 'Image',
             type: 'array',
-            of:[{type: 'image'}],
+            of: [{ type: 'image' }],
             options: {
                 hotspot: true,
             }
@@ -16,6 +16,11 @@ export default {
             name: 'name',
             title: 'Name',
             type: 'string',
+            validation: Rule => Rule.required(),
+            // Configura el índice de búsqueda para este campo
+            options: {
+                indexing: 'searchAsText',
+            },
         },
         {
             name: 'slug',

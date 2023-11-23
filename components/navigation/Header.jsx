@@ -8,6 +8,29 @@ import Cart from '../product/Cart';
 
 const Header = () => {
     const { showCart, setShowCart, totalQuantities } = useStateContext();
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+
+    const handleSearch = async () => {
+        try {
+          // Realiza la consulta a Sanity
+          const query = `*[_type == "product" && name match "${searchTerm}*"]`;
+          const results = await client.fetch(query);
+    
+          // Muestra los resultados en la consola
+          console.log('Resultados de la búsqueda:', results);
+    
+          // Actualiza el estado con los resultados obtenidos
+          setSearchResults(results);
+        } catch (error) {
+          console.error('Error en la búsqueda:', error);
+          // Maneja el error según tus necesidades
+        }
+      };
+      const handleSearchButtonClick = (e) => {
+        e.preventDefault(); // Evita que se recargue la página al hacer clic en el botón
+        handleSearch();
+      };
 
 
     return (
@@ -19,10 +42,18 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className='mb-5 lg:mb-0'>
-                    <form className="m-0 relative mx-auto text-gray-600">
+                    <form className="m-0 relative mx-auto text-gray-600"
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        handleSearch();
+                      }}>
                         <input className="border-2 outline-none border-custom-pink hover:border-pink-500 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                            type="search" name="search" placeholder="Buscar" />
-                        <button type="submit" className="absolute right-0 top-[-12px] mt-5 mr-4">
+                            type="search" 
+                            name="search" 
+                            placeholder="Buscar" 
+                            onChange={(e) => setSearchTerm(e.target.value)}/>
+                        <button type="submit" className="absolute right-0 top-[-12px] mt-5 mr-4"
+                        onClick={handleSearchButtonClick}>
                             <BsSearchHeart className='text-pink-200 hover:text-pink-600' size={25} />
                         </button>
                     </form>
@@ -48,3 +79,4 @@ const Header = () => {
 };
 
 export default Header;
+
