@@ -39,11 +39,11 @@ const Cart = () => {
         )}
 
         <div className='product-container'>
-          
+
           {cartItems.length >= 1 && cartItems.map((item) => (
-            
+
             <div className='product' key={item.id}>
-              
+
               <img src={urlFor(item?.image[0])} className="cart-product-image" />
               <div className='item-desc'>
                 <div className='flex top'>
@@ -78,9 +78,9 @@ const Cart = () => {
               <h3>${totalPrice}</h3>
             </div>
             <div className="btn-container">
-              <button type="button" className="btn" onClick=''>
+              <Link href="https://wa.me/573167184276" className="btn">
                 Cotizar
-              </button>
+              </Link>
             </div>
           </div>
         )}
